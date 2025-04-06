@@ -1,29 +1,15 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu } from 'lucide-react';
-import styles from './Footer.module.css';
-
+// Footer.js
+import styles from './Footer.module.css'
 
 export default function Footer() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <nav className={styles.navbar}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>Your Name</Link>
-        <div className={styles.menuButton} onClick={toggleMenu}>
-          <Menu size={24} />
+        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <div className={styles.socialIcons}>
+          {/* Add same social icons as contact page if desired */}
         </div>
-        <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
       </div>
-    </nav>
+    </footer>
   )
 }

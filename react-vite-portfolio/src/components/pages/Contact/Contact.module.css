@@ -57,6 +57,7 @@
   box-shadow: 0 0 15px rgba(0,255,136,0.2);
 }
 
+/* Adjust label positioning */
 .label {
   position: absolute;
   left: 3rem;
@@ -64,14 +65,15 @@
   color: rgba(255,255,255,0.6);
   pointer-events: none;
   transition: all 0.3s ease;
+  padding: 0 0.5rem; /* Add padding */
+  z-index: 1; /* Ensure label stays above input */
 }
 
 .input:focus ~ .label,
 .input:not(:placeholder-shown) ~ .label,
 .textarea:focus ~ .label,
 .textarea:not(:placeholder-shown) ~ .label {
-  transform: translateY(-1.8rem);
-  font-size: 0.9rem;
+  transform: translateY(-2.7rem); /* Increased from -1.8rem */
   color: #00ff88;
 }
 
@@ -175,4 +177,32 @@
       font-size: 1rem;
       padding: 1rem 1.5rem;
   }
+}
+
+.socialLinks {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.socialLinks h3 {
+  color: #00ff88;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.socialIcons a {
+  color: rgba(255,255,255,0.6);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #00ff88;
+  transform: translateY(-3px);
 }

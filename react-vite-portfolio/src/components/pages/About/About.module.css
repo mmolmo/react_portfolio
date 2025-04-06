@@ -37,16 +37,26 @@ h1 {
 }
 
 .animatedText {
-  height: 60px;
+  height: 60px; /* Match the height of the list items */
+  position: relative;
   overflow: hidden;
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.staticText {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-right: 8px;
 }
 
 .dynamicText {
   list-style: none;
-  animation: slide 12s infinite;
   padding: 0;
   margin: 0;
+  position: relative;
+  animation: slide 12s infinite;
 }
 
 .dynamicText li {
@@ -55,7 +65,8 @@ h1 {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .description {
@@ -115,11 +126,21 @@ h1 {
 }
 
 @keyframes slide {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-25%); }
-  50%, 70% { transform: translateY(-50%); }
-  75%, 95% { transform: translateY(-75%); }
-  100% { transform: translateY(-100%); }
+  0%, 20% {
+    transform: translateY(0);
+  }
+  25%, 45% {
+    transform: translateY(-60px);
+  }
+  50%, 70% {
+    transform: translateY(-120px);
+  }
+  75%, 95% {
+    transform: translateY(-180px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
@@ -129,36 +150,90 @@ h1 {
 
 @media (max-width: 768px) {
   h1 {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
-
+  
+  .staticText {
+    font-size: 1.8rem;
+  }
+  
+  .animatedText {
+    height: 50px;
+  }
+  
   .dynamicText li {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
+    height: 50px;
   }
-
+  
   .skillsGrid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-
+  
   .skillCard {
-      padding: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  @keyframes slide {
+    0%, 20% {
+      transform: translateY(0);
+    }
+    25%, 45% {
+      transform: translateY(-50px);
+    }
+    50%, 70% {
+      transform: translateY(-100px);
+    }
+    75%, 95% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-
+  
   .introText {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
-
+  
+  .staticText {
+    font-size: 1.4rem;
+  }
+  
+  .animatedText {
+    height: 40px;
+  }
+  
   .dynamicText li {
-      font-size: 1.4rem;
+    font-size: 1.4rem;
+    height: 40px;
   }
-
+  
   .description {
-      font-size: 1rem;
+    font-size: 1rem;
+  }
+  
+  @keyframes slide {
+    0%, 20% {
+      transform: translateY(0);
+    }
+    25%, 45% {
+      transform: translateY(-40px);
+    }
+    50%, 70% {
+      transform: translateY(-80px);
+    }
+    75%, 95% {
+      transform: translateY(-120px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }

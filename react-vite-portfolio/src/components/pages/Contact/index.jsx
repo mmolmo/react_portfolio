@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef  } from 'react'
 import styles from './Contact.module.css'
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,34 @@ export default function Contact() {
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
+  const formRef = useRef(null)
+
+  // const validate = () => {
+  //   const newErrors = {}
+  //   if (!formData.name.trim()) newErrors.name = 'Name is required'
+  //   if (!formData.email.match(/^\S+@\S+\.\S+$/)) newErrors.email = 'Invalid email address'
+  //   if (!formData.message.trim()) newErrors.message = 'Message cannot be empty'
+  //   setErrors(newErrors)
+  //   return Object.keys(newErrors).length === 0
+  // }
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   if (!validate()) return
+
+  //   setIsSubmitting(true)
+  //   try {
+  //     // Simulate API call
+  //     await new Promise(resolve => setTimeout(resolve, 2000))
+  //     setSuccessMessage('Message sent successfully!')
+  //     setFormData({ name: '', email: '', message: '' })
+  //     setTimeout(() => setSuccessMessage(''), 3000)
+  //   } catch (error) {
+  //     setErrors({ form: 'Failed to send message. Please try again.' })
+  //   } finally {
+  //     setIsSubmitting(false)
+  //   }
+  // }
 
   const validate = () => {
     const newErrors = {}
@@ -26,12 +55,21 @@ export default function Contact() {
 
     setIsSubmitting(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Replace the simulation with EmailJS send
+      const result = await emailjs.sendForm(
+        'service_ot9dih4',    // Replace with your EmailJS service ID
+        'template_kbot0r1',   // Replace with your EmailJS template ID
+        formRef.current,           // Your form data
+        // '#contact-form',
+        'HlKfgJeuN4KACGWLs',     // Replace with your EmailJS public key
+      )
+      
+      console.log('Email sent successfully:', result.text)
       setSuccessMessage('Message sent successfully!')
       setFormData({ name: '', email: '', message: '' })
       setTimeout(() => setSuccessMessage(''), 3000)
     } catch (error) {
+      console.error('Failed to send email:', error)
       setErrors({ form: 'Failed to send message. Please try again.' })
     } finally {
       setIsSubmitting(false)
@@ -42,8 +80,8 @@ export default function Contact() {
     <section className={styles.hero}>
       <div className={styles.formContainer}>
         <h2 className={styles.title}>Get in Touch</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.inputGroup}>
+        <form ref={formRef} onSubmit={handleSubmit} className={styles.form} id="contact-form">
+          <fieldset className={styles.inputGroup}>
             <input
               type="text"
               id="name"
@@ -55,9 +93,9 @@ export default function Contact() {
             <label htmlFor="name" className={styles.label}>Your Name</label>
             <i className={`fas fa-user ${styles.icon}`}></i>
             {errors.name && <span className={styles.error}>{errors.name}</span>}
-          </div>
+          </fieldset>
 
-          <div className={styles.inputGroup}>
+          <fieldset className={styles.inputGroup}>
             <input
               type="email"
               id="email"
@@ -69,9 +107,9 @@ export default function Contact() {
             <label htmlFor="email" className={styles.label}>Email Address</label>
             <i className={`fas fa-envelope ${styles.icon}`}></i>
             {errors.email && <span className={styles.error}>{errors.email}</span>}
-          </div>
+          </fieldset>
 
-          <div className={styles.inputGroup}>
+          <fieldset className={styles.inputGroup}>
             <textarea
               id="message"
               value={formData.message}
@@ -83,7 +121,7 @@ export default function Contact() {
             <label htmlFor="message" className={styles.label}>Your Message</label>
             <i className={`fas fa-comment-dots ${styles.icon}`}></i>
             {errors.message && <span className={styles.error}>{errors.message}</span>}
-          </div>
+          </fieldset>
 
           <button 
             type="submit" 
@@ -109,6 +147,24 @@ export default function Contact() {
 
           {errors.form && <div className={styles.formError}>{errors.form}</div>}
         </form>
+        {/* Add Social Media Links */}
+        <div className={styles.socialLinks}>
+          <h3>Connect With Me</h3>
+          <div className={styles.socialIcons}>
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:youremail@example.com">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )

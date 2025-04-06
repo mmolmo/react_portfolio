@@ -8,18 +8,17 @@ export default function About() {
           <p className={styles.introText}>Hi, I'm</p>
           <h1>Alex Johnson</h1>
           <div className={styles.animatedText}>
-            <span className={styles.staticText}>I'm a</span>
+            <span className={styles.staticText}>I'm a </span>
             <ul className={styles.dynamicText}>
-              <li><span>Web Designer</span></li>
-              <li><span>UI Developer</span></li>
-              <li><span>React Expert</span></li>
-              <li><span>Frontend Wizard</span></li>
+              <li>Web Designer</li>
+              <li>UI Developer</li>
+              <li>React Expert</li>
+              <li>Frontend Wizard</li>
             </ul>
           </div>
           <p className={styles.description}>Crafting beautiful digital experiences with modern web technologies.</p>
           <button className={styles.ctaButton}>View My Work</button>
         </div>
-
         <div className={styles.skillsGrid}>
           <div className={styles.skillCard}>
             <i className="fas fa-code"></i>

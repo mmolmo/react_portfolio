@@ -5,7 +5,7 @@ import './App.css'
 
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/elements/Navbar'
-// import Footer from './components/elements/Footer/Footer'
+import Footer from './components/elements/Footer'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Projects from './components/pages/Projects'
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
