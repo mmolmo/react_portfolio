@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [animatedText, setAnimatedText] = useState('');
@@ -22,6 +23,13 @@ export default function Home() {
     return () => clearInterval(typingEffect);
   }, [animatedText, currentWordIndex]);
 
+  const navigate = useNavigate();
+
+  const handleNavigation = (screenToNavigate) => (e) => {
+    e.preventDefault();
+    navigate(screenToNavigate);
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.floatingShapes}>
@@ -42,11 +50,11 @@ export default function Home() {
           </p>
           
           <div className={styles.buttonGroup}>
-            <a href="#projects" className={styles.ctaButton}>
+            <a href="../Projects" className={styles.ctaButton} onClick={handleNavigation('../Projects')}>
               View My Work
               <i className="fas fa-arrow-down"></i>
             </a>
-            <a href="#contact" className={styles.outlineButton}>
+            <a href="#contact" className={styles.outlineButton} onClick={handleNavigation('../Contact')}>
               Get In Touch
             </a>
           </div>

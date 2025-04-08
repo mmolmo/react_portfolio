@@ -1,6 +1,15 @@
 import styles from './About.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function About() {
+
+  const navigate = useNavigate();
+
+  const handleNavigation = (screenToNavigate) => (e) => {
+    e.preventDefault();
+    navigate(screenToNavigate);
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
@@ -17,7 +26,10 @@ export default function About() {
             </ul>
           </div>
           <p className={styles.description}>Crafting beautiful digital experiences with modern web technologies.</p>
-          <button className={styles.ctaButton}>View My Work</button>
+          <a href="../Projects" className={styles.ctaButton} onClick={handleNavigation('../Projects')}>
+            View My Work
+            <i className="fas fa-arrow-down"></i>
+          </a>
         </div>
         <div className={styles.skillsGrid}>
           <div className={styles.skillCard}>
