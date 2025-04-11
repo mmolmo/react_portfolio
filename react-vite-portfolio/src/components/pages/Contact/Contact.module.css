@@ -1,4 +1,10 @@
 /* Contact.module.css */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 .hero {
   background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../../assets/hero-bg.jpg');
   background-size: cover;
@@ -12,7 +18,7 @@
 }
 
 .formContainer {
-  background: rgba(255,255,255,0.1);
+  /* background: rgba(255,255,255,0.1); */
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
@@ -40,7 +46,7 @@
 }
 
 .input, .textarea {
-  width: 100%;
+  width: 90%;
   padding: 1.2rem 1.2rem 1.2rem 3rem;
   border: 2px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.05);

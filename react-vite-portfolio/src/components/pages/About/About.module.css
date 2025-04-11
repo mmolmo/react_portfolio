@@ -237,3 +237,113 @@ h1 {
     }
   }
 }
+
+/* About.module.css */
+.about {
+  padding: 4rem 0;
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../../assets/hero-bg.jpg');
+  /* background: #f9f9f9; */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profileSection {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.profileImage {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #00ff88;
+}
+
+.bioText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.skillsSection {
+  margin-bottom: 4rem;
+}
+
+.skillsTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+}
+
+.skillIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: #00ff88;
+}
+
+.skillName {
+  font-size: 0.9rem;
+  color: white;
+  margin: 0;
+}
+
+.interestsSection {
+  text-align: center;
+}
+
+.interestsTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.interestsList {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.interest {
+  background: #00ff88;
+  color: #2d3436;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .profileSection {
+    grid-template-columns: 1fr;
+  }
+
+  .profileImage {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

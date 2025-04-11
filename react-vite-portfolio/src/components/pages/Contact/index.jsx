@@ -13,33 +13,6 @@ export default function Contact() {
   const [successMessage, setSuccessMessage] = useState('')
   const formRef = useRef(null)
 
-  // const validate = () => {
-  //   const newErrors = {}
-  //   if (!formData.name.trim()) newErrors.name = 'Name is required'
-  //   if (!formData.email.match(/^\S+@\S+\.\S+$/)) newErrors.email = 'Invalid email address'
-  //   if (!formData.message.trim()) newErrors.message = 'Message cannot be empty'
-  //   setErrors(newErrors)
-  //   return Object.keys(newErrors).length === 0
-  // }
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   if (!validate()) return
-
-  //   setIsSubmitting(true)
-  //   try {
-  //     // Simulate API call
-  //     await new Promise(resolve => setTimeout(resolve, 2000))
-  //     setSuccessMessage('Message sent successfully!')
-  //     setFormData({ name: '', email: '', message: '' })
-  //     setTimeout(() => setSuccessMessage(''), 3000)
-  //   } catch (error) {
-  //     setErrors({ form: 'Failed to send message. Please try again.' })
-  //   } finally {
-  //     setIsSubmitting(false)
-  //   }
-  // }
-
   const validate = () => {
     const newErrors = {}
     if (!formData.name.trim()) newErrors.name = 'Name is required'
@@ -57,14 +30,13 @@ export default function Contact() {
     try {
       // Replace the simulation with EmailJS send
       const result = await emailjs.sendForm(
-        'service_ot9dih4',    // Replace with your EmailJS service ID
-        'template_kbot0r1',   // Replace with your EmailJS template ID
+        'service_ot9dih4',    // EmailJS service ID
+        'template_kbot0r1',   // EmailJS template ID
         formRef.current,           // Your form data
-        // '#contact-form',
-        'HlKfgJeuN4KACGWLs',     // Replace with your EmailJS public key
+        'HlKfgJeuN4KACGWLs',     // EmailJS public key
       )
       
-      console.log('Email sent successfully:', result.text)
+      // console.log('Email sent successfully:', result.text)
       setSuccessMessage('Message sent successfully!')
       setFormData({ name: '', email: '', message: '' })
       setTimeout(() => setSuccessMessage(''), 3000)
@@ -85,6 +57,7 @@ export default function Contact() {
             <input
               type="text"
               id="name"
+              name="name"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               className={`${styles.input} ${errors.name ? styles.errorInput : ''}`}
@@ -99,6 +72,7 @@ export default function Contact() {
             <input
               type="email"
               id="email"
+              name="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               className={`${styles.input} ${errors.email ? styles.errorInput : ''}`}
@@ -112,6 +86,7 @@ export default function Contact() {
           <fieldset className={styles.inputGroup}>
             <textarea
               id="message"
+              name="message"
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
               className={`${styles.textarea} ${errors.message ? styles.errorInput : ''}`}

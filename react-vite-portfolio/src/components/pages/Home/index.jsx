@@ -49,6 +49,24 @@ export default function Home() {
             Crafting beautiful digital experiences with modern web technologies
           </p>
           
+        <div className={styles.skillsGrid}>
+          <div className={styles.skillCard}>
+            <i className="fas fa-code"></i>
+            <h3>Clean Code</h3>
+            <p>Semantic, accessible, and maintainable</p>
+          </div>
+          <div className={styles.skillCard}>
+            <i className="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+            <p>Perfect on all devices</p>
+          </div>
+          <div className={styles.skillCard}>
+            <i className="fab fa-react"></i>
+            <h3>React Projects</h3>
+            <p>Interactive web applications</p>
+          </div>
+        </div>
+
           <div className={styles.buttonGroup}>
             <a href="../Projects" className={styles.ctaButton} onClick={handleNavigation('../Projects')}>
               View My Work

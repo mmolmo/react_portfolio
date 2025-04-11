@@ -218,3 +218,148 @@
       min-width: 200px;
   }
 }
+
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.skillCard {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-10px);
+}
+
+.skillCard i {
+  font-size: 2.5rem;
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.skillCard h3 {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+@keyframes slide {
+  0%, 20% {
+    transform: translateY(0);
+  }
+  25%, 45% {
+    transform: translateY(-60px);
+  }
+  50%, 70% {
+    transform: translateY(-120px);
+  }
+  75%, 95% {
+    transform: translateY(-180px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .staticText {
+    font-size: 1.8rem;
+  }
+  
+  .animatedText {
+    height: 50px;
+  }
+  
+  .dynamicText li {
+    font-size: 1.8rem;
+    height: 50px;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skillCard {
+    padding: 1.5rem;
+  }
+  
+  @keyframes slide {
+    0%, 20% {
+      transform: translateY(0);
+    }
+    25%, 45% {
+      transform: translateY(-50px);
+    }
+    50%, 70% {
+      transform: translateY(-100px);
+    }
+    75%, 95% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .introText {
+    font-size: 1.2rem;
+  }
+  
+  .staticText {
+    font-size: 1.4rem;
+  }
+  
+  .animatedText {
+    height: 40px;
+  }
+  
+  .dynamicText li {
+    font-size: 1.4rem;
+    height: 40px;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  @keyframes slide {
+    0%, 20% {
+      transform: translateY(0);
+    }
+    25%, 45% {
+      transform: translateY(-40px);
+    }
+    50%, 70% {
+      transform: translateY(-80px);
+    }
+    75%, 95% {
+      transform: translateY(-120px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
