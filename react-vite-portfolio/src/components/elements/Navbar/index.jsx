@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import birdIcon from '../../../assets/icons/home/birdpic2.png';
+import birdIcon from '../../../assets/icons/home/birdpic100.png';
 import styles from './Navbar.module.css';
 
 
