@@ -60,7 +60,7 @@
 }
 
 .introText {
-  color: #00ff88;
+  color: var(--color-accent);
   font-size: 1.5rem;
   margin-bottom: 1rem;
   letter-spacing: 3px;
@@ -75,7 +75,7 @@
 }
 
 .animatedText {
-  color: #00ff88;
+  color: var(--color-accent);
   display: inline-block;
   min-width: 300px;
 }
@@ -98,10 +98,10 @@
 }
 
 .ctaButton {
-  background: linear-gradient(45deg, #00ff88, #00ccff);
+  background: linear-gradient(45deg, var(--color-accent), var(--color-accent-secondary));
   color: #1a1a1a;
   padding: 1.2rem 2.5rem;
-  border-radius: 50px;
+  border-radius: var(--button-radius);
   text-decoration: none;
   font-weight: 600;
   display: flex;
@@ -116,10 +116,10 @@
 }
 
 .outlineButton {
-  border: 2px solid #00ff88;
-  color: #00ff88;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
   padding: 1.2rem 2.5rem;
-  border-radius: 50px;
+  border-radius: var(--button-radius);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -145,7 +145,7 @@
 }
 
 .socialIcon:hover {
-  color: #00ff88;
+  color: var(--color-accent);
   transform: translateY(-3px);
 }
 
@@ -154,24 +154,6 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.mouse {
-  width: 30px;
-  height: 50px;
-  border: 2px solid white;
-  border-radius: 15px;
-  position: relative;
-}
-
-.scroller {
-  width: 4px;
-  height: 10px;
-  background: #00ff88;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 2s infinite;
 }
 
 @keyframes float {
@@ -242,7 +224,7 @@
 
 .skillCard i {
   font-size: 2.5rem;
-  color: #00ff88;
+  color: var(--color-accent);
   margin-bottom: 1rem;
 }
 

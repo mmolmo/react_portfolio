@@ -1,34 +1,10 @@
 import styles from './Projects.module.css'
+import { ProjectsList } from '../../data/Projects';
 import ProjectCard from '../../elements/ProjectCard'
 import { motion, useScroll, useTransform, useSpring } from 'motion/react'
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      desc: "Full-featured online shopping platform with React & Node.js",
-      tech: ["React", "Node.js", "MongoDB", "Stripe API"],
-      image: "/project1.jpg",
-      demo: "#",
-      code: "#"
-    },
-    {
-      title: "Task Management App",
-      desc: "Real-time collaborative task management system",
-      tech: ["React", "Firebase", "Material UI", "Redux"],
-      image: "/project2.jpg",
-      demo: "#",
-      code: "#"
-    },
-    {
-      title: "Social Media Dashboard",
-      desc: "Analytics dashboard with data visualization",
-      tech: ["Next.js", "Chart.js", "Express", "PostgreSQL"],
-      image: "/project3.jpg",
-      demo: "#",
-      code: "#"
-    }
-  ]
+  const projects = [...ProjectsList];
 
   // Scroll animation setup
   const { scrollY } = useScroll();

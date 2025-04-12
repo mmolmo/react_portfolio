@@ -29,12 +29,12 @@ export default function About() {
             className={styles.profileImage} 
           />
           <div className={styles.bio}>
-            <h1 className={styles.title}>Alex Johnson</h1>
+            <h1 className={styles.title}>About Me...</h1>
             <p className={styles.bioText}>
-              Frontend developer specializing in modern web applications. With 5 years of experience, 
-              I create intuitive digital experiences using cutting-edge technologies. When I'm not coding, 
-              you'll find me hiking nature trails or experimenting with new recipes in the kitchen. 
-              Passionate about open-source projects and mentoring up-and-coming developers.
+              Front-end Designer with an eye for design and a passion for creating user experiences. Currently interning with locally-run art startup to build their web and digital presence.
+            </p>
+            <p className={styles.bioText}>
+              Building on a foundation of design-focused coursework and hands-on projects, I've contributed to designing and developing multiple student projects. My experience in web development taught me the value of teamwork and knowledge sharing. Always eager to learn, I’m continuously exploring new frameworks and techniques to enhance usability and design. 
             </p>
           </div>
         </motion.div>
@@ -60,16 +60,6 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-
-        <div className={styles.interestsSection}>
-          <h2 className={styles.interestsTitle}>Other Interests</h2>
-          <div className={styles.interestsList}>
-            <span className={styles.interest}>🚴 Cycling</span>
-            <span className={styles.interest}>📸 Photography</span>
-            <span className={styles.interest}>🌱 Sustainable Tech</span>
-            <span className={styles.interest}>🎸 Guitar</span>
-          </div>
         </div>
       </div>
     </section>

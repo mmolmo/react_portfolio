@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Home() {
   const [animatedText, setAnimatedText] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const words = ['Developer', 'Designer', 'Creator', 'Innovator'];
+  const words = ['Designer'];
   
   useEffect(() => {
     const typingEffect = setInterval(() => {
@@ -46,14 +46,14 @@ export default function Home() {
             <span className={styles.cursor}>|</span>
           </h1>
           <p className={styles.subtitle}>
-            Crafting beautiful digital experiences with modern web technologies
+            Mixing textures with angular layouts to craft unique visual experiences. 
           </p>
           
         <div className={styles.skillsGrid}>
           <div className={styles.skillCard}>
             <i className="fas fa-code"></i>
-            <h3>Clean Code</h3>
-            <p>Semantic, accessible, and maintainable</p>
+            <h3>Minimal Visuals</h3>
+            <p>Semantic, clean designs</p>
           </div>
           <div className={styles.skillCard}>
             <i className="fas fa-mobile-alt"></i>
@@ -82,12 +82,6 @@ export default function Home() {
           <a href="#" className={styles.socialIcon}><i className="fab fa-github"></i></a>
           <a href="#" className={styles.socialIcon}><i className="fab fa-linkedin"></i></a>
           <a href="#" className={styles.socialIcon}><i className="fab fa-twitter"></i></a>
-        </div>
-      </div>
-
-      <div className={styles.scrollIndicator}>
-        <div className={styles.mouse}>
-          <div className={styles.scroller}></div>
         </div>
       </div>
     </section>
