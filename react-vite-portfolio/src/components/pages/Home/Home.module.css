@@ -1,6 +1,8 @@
 /* Home.module.css */
+/* @import url('../../../assets/backgrounds/coverbg1.jpg'); */
+
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../assets/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url('../../../assets/backgrounds/coverbg1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -21,9 +23,18 @@
 
 .shape1, .shape2, .shape3 {
   position: absolute;
-  background: rgba(0,255,136,0.1);
+  background: var(--color-transparent-accent);
   border-radius: 50%;
+  filter: blur(100px);
   animation: float 25s infinite linear;
+  transition: all 0.3s ease;
+}
+
+.shape1:hover, .shape2:hover, .shape3:hover {
+  background: var(--color-accent-secondary);
+  filter: blur(0px);
+  animation: float 25s infinite linear;
+  background-color: var(--color-accent-secondary);
 }
 
 .shape1 {
@@ -71,7 +82,7 @@
   font-size: 4.5rem;
   margin: 1rem 0;
   line-height: 1.2;
-  text-shadow: 0 0 20px rgba(0,255,136,0.3);
+  text-shadow: 0 0 20px var(--color-transparent-accent);
 }
 
 .animatedText {
@@ -112,7 +123,7 @@
 
 .ctaButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,255,136,0.3);
+  box-shadow: 0 10px 20px var(--color-transparent-accent);
 }
 
 .outlineButton {
@@ -125,7 +136,7 @@
 }
 
 .outlineButton:hover {
-  background: rgba(0,255,136,0.1);
+  background: var(--color-transparent-accent-dark);
   transform: translateY(-3px);
 }
 
@@ -147,13 +158,6 @@
 .socialIcon:hover {
   color: var(--color-accent);
   transform: translateY(-3px);
-}
-
-.scrollIndicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 @keyframes float {
@@ -210,11 +214,11 @@
 }
 
 .skillCard {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.13);
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   transition: transform 0.3s ease;
 }
 

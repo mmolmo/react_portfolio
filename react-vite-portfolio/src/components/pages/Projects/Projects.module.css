@@ -1,6 +1,6 @@
 /* Projects.module.css */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../../assets/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('../../../assets/backgrounds/coverbg1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -42,7 +42,7 @@
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   border: 1px solid rgba(255,255,255,0.1);
 }
 

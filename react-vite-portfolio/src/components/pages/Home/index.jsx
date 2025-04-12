@@ -3,26 +3,9 @@ import styles from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
-  const [animatedText, setAnimatedText] = useState('');
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const words = ['Designer'];
+
+  const [animatedText] = useState('Designer'); // Simplified to direct value
   
-  useEffect(() => {
-    const typingEffect = setInterval(() => {
-      const word = words[currentWordIndex];
-      setAnimatedText(word.substring(0, animatedText.length + 1));
-      
-      if (animatedText === word) {
-        setTimeout(() => {
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
-          setAnimatedText('');
-        }, 2000);
-      }
-    }, 150);
-
-    return () => clearInterval(typingEffect);
-  }, [animatedText, currentWordIndex]);
-
   const navigate = useNavigate();
 
   const handleNavigation = (screenToNavigate) => (e) => {
@@ -40,7 +23,7 @@ export default function Home() {
       
       <div className={styles.heroContent}>
         <div className={styles.textWrapper}>
-          <h6 className={styles.introText}>Hi, I'm Alex Johnson</h6>
+          <h6 className={styles.introText}>Hi, I'm James Li</h6>
           <h1 className={styles.mainTitle}>
             Frontend <span className={styles.animatedText}>{animatedText}</span>
             <span className={styles.cursor}>|</span>
@@ -79,9 +62,9 @@ export default function Home() {
         </div>
 
         <div className={styles.socialLinks}>
-          <a href="#" className={styles.socialIcon}><i className="fab fa-github"></i></a>
-          <a href="#" className={styles.socialIcon}><i className="fab fa-linkedin"></i></a>
-          <a href="#" className={styles.socialIcon}><i className="fab fa-twitter"></i></a>
+          <a href="https://github.com/mmolmo" className={styles.socialIcon}><i className="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/james-li-050b36264" className={styles.socialIcon}><i className="fab fa-linkedin"></i></a>
+          <a href="https://instagram.com/burntjohn_anorak45" className={styles.socialIcon}><i className="fab fa-instagram"></i></a>
         </div>
       </div>
     </section>

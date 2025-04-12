@@ -50,6 +50,11 @@ export default function Contact() {
 
   return (
     <section className={styles.hero}>
+      <div className={styles.floatingShapes}>
+        <div className={styles.shape1}></div>
+        <div className={styles.shape2}></div>
+        <div className={styles.shape3}></div>
+      </div>
       <div className={styles.formContainer}>
         <h2 className={styles.title}>Get in Touch</h2>
         <form ref={formRef} onSubmit={handleSubmit} className={styles.form} id="contact-form">
@@ -126,16 +131,16 @@ export default function Contact() {
         <div className={styles.socialLinks}>
           <h3>Connect With Me</h3>
           <div className={styles.socialIcons}>
-            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mmolmo" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/james-li-050b36264" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin"></i>
             </a>
-            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter"></i>
+            <a href="https://instagram.com/burntjohn_anorak45" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram"></i>
             </a>
-            <a href="mailto:youremail@example.com">
+            <a href="mailto:jamesli20275@gmail.com">
               <i className="fas fa-envelope"></i>
             </a>
           </div>

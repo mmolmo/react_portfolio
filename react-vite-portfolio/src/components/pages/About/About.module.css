@@ -1,6 +1,6 @@
 /* About.module.css */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../assets/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)),  url('../../../assets/backgrounds/coverbg1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -91,7 +91,7 @@ h1 {
 
 .ctaButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,255,136,0.4);
+  box-shadow: 0 5px 15px var(--color-transparent-accent);
 }
 
 .skillsGrid {
@@ -102,11 +102,11 @@ h1 {
 }
 
 .skillCard {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.13);
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   transition: transform 0.3s ease;
 }
 
@@ -239,11 +239,7 @@ h1 {
 }
 
 /* About.module.css */
-.about {
-  padding: 4rem 0;
-  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../../assets/hero-bg.jpg');
-  /* background: #f9f9f9; */
-}
+
 
 .container {
   max-width: 1200px;
@@ -256,12 +252,53 @@ h1 {
   grid-template-columns: 300px 1fr;
   gap: 3rem;
   margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .profileImage {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.1);
+  margin: 0px;
+  overflow: hidden;
+}
+
+.profileImage:hover {
+  /* transform: scale(1.05) rotate(10deg); */
+  transition: transform 0.3s ease;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: repeat-y;
+}
+
+.hoverShape, .hoverShape2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hoverShape {
+  width: 200px;
+  height: 200px;
+  background: var(--color-accent);
+  top: 20%;
+  left: -30%;
+}
+
+.hoverShape2 {
+  width: 150px;
+  height: 150px;
+  background: var(--color-accent-secondary);
+  bottom: -20%;
+  right: -30%;
 }
 
 .title {

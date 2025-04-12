@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
+import birdIcon from '../../../assets/icons/home/birdpic2.png';
 import styles from './Navbar.module.css';
 
 
@@ -14,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>Your Name</Link>
+        <Link to="/" className={styles.logo}><img src={birdIcon} className={styles.homeIcon} alt="Clickable Home Icon"></img></Link>
         <div className={styles.menuButton} onClick={toggleMenu}>
           <Menu size={24} />
         </div>

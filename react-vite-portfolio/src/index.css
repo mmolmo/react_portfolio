@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap");
-  
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");  
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -42,13 +42,25 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5rem;
   line-height: 1.1;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 h2,h3,h4,h5,h6 {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+a, button {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+input, label, textarea {
   font-family: "Inter Tight", sans-serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
 }
 
 button {
@@ -57,7 +69,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Roboto Mono", sans-serif;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -82,3 +94,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+

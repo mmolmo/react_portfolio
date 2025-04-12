@@ -6,25 +6,76 @@ fieldset {
 }
 
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../../assets/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('../../../assets/backgrounds/coverbg1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
 }
 
-.formContainer {
-  /* background: rgba(255,255,255,0.1); */
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 3rem;
-  max-width: 1000px;
+
+.floatingShapes {
+  position: absolute;
   width: 100%;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  height: 100%;
+  pointer-events: none;
+}
+
+.shape1, .shape2, .shape3 {
+  position: absolute;
+  background: var(--color-transparent-accent);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: float 25s infinite linear;
+  transition: all 0.3s ease;
+}
+
+.shape1:hover, .shape2:hover, .shape3:hover {
+  background: var(--color-accent-secondary);
+  filter: blur(0px);
+  animation: float 25s infinite linear;
+  background-color: var(--color-accent-secondary);
+}
+
+.shape1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: -150px;
+}
+
+.shape2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  right: 20%;
+}
+
+.shape3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: -75px;
+}
+
+
+.formContainer {
+  background: rgba(0, 0, 0, 0.1); /* Adjust the alpha value (0.2) for desired transparency */
+  backdrop-filter: blur(0px);
+  border-radius: 20px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  max-width: 1000px;
+  /* width: 100%; */
+  width: calc(100% - 40px);
+  /* box-shadow: 0 8px 32px rgba(0,0,0,0.3); */
 }
 
 .title {
@@ -32,23 +83,35 @@ fieldset {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: var(--color-accent);
-  text-shadow: 0 0 10px rgba(0,255,136,0.3);
+  text-shadow: 0 0 10px var(--color-transparent-accent);
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.0);
 }
 
 .inputGroup {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  /* padding-right: 20px; */
+}
+
+.inputGroup i {
+  padding-left: 1rem;
+  font-size: 1.2rem;
 }
 
 .input, .textarea {
   width: 90%;
   padding: 1.2rem 1.2rem 1.2rem 3rem;
-  border: 2px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255, 255, 255, 0.242);
   background: rgba(255,255,255,0.05);
   border-radius: 10px;
   color: white;
@@ -60,7 +123,7 @@ fieldset {
   border-color: var(--color-accent);
   background: rgba(0,255,136,0.05);
   outline: none;
-  box-shadow: 0 0 15px rgba(0,255,136,0.2);
+  box-shadow: 0 0 15px var(--color-transparent-accent);
 }
 
 /* Adjust label positioning */
@@ -68,7 +131,7 @@ fieldset {
   position: absolute;
   left: 3rem;
   top: 1.2rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.723);
   pointer-events: none;
   transition: all 0.3s ease;
   padding: 0 0.5rem; /* Add padding */
@@ -86,9 +149,9 @@ fieldset {
 .icon {
   position: absolute;
   left: 1rem;
-  top: 50%;
+  top: 2rem;
   transform: translateY(-50%);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.723);
   font-size: 1.2rem;
 }
 
@@ -115,7 +178,7 @@ fieldset {
 
 .submitButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,255,136,0.4);
+  box-shadow: 0 5px 15px var(--color-transparent-accent);
 }
 
 .submitButton:disabled {
@@ -139,7 +202,7 @@ fieldset {
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
-  background: rgba(0,255,136,0.1);
+  background: var(--color-transparent-accent-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,26 +216,38 @@ fieldset {
 }
 
 @media (max-width: 768px) {
-  .formContainer {
-      padding: 2rem;
-  }
-  
+  .hero {
+    padding: 0rem;
+  } 
   .title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
   
   .input, .textarea {
-      padding-left: 2.5rem;
+    /* padding-left: 2rem; */
   }
   
   .icon {
-      left: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .formContainer {
+    max-width: 768px;
+    /* width: 100%; */
+    width: 80%;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+
+  .inputGroup {
+    max-width: 768px;
+    padding: 0;
   }
 }
 
 @media (max-width: 480px) {
   .formContainer {
-      padding: 1.5rem;
+    
   }
   
   .title {

@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} James Li - All rights reserved.</p>
         <div className={styles.socialIcons}>
-          {/* Add same social icons as contact page if desired */}
+          {/* future social media links, wip */}
         </div>
       </div>
     </footer>

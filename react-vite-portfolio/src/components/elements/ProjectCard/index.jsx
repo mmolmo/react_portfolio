@@ -6,13 +6,14 @@ export default function ProjectCard({ project }) {
   const cardVariants = {
     initial: { y: 0, scale: 1 },
     hover: { 
-      y: -10,
-      scale: 1.02,
+      y: -10, 
+      scale: 1.02, 
       transition: { 
-        type: "spring",
-        stiffness: 600,
-        damping: 10
-      }
+        type: "bounce",
+        stiffness: 800, // Increased from 600
+        damping: 15,    // Increased from 10
+        duration: 0.1  // Adjusted to your preferred duration
+      } 
     }
   }
 
@@ -27,8 +28,8 @@ export default function ProjectCard({ project }) {
       y: 0,
       opacity: 1,
       transition: {
-        delay: i * 0.1,
-        duration: 0.3
+        delay: i * 0.05,
+        duration: 0.5
       }
     })
   }
@@ -39,7 +40,6 @@ export default function ProjectCard({ project }) {
       whileHover="hover"
       variants={cardVariants}
       className={styles.projectCard}
-      transition={{ type: "spring", bounce: 0.4 }}
     >
       <div className={styles.imageContainer}>
         <img 
@@ -58,7 +58,7 @@ export default function ProjectCard({ project }) {
         className={styles.projectContent}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
+        transition={{ duration: 0.6 }}
       >
         <h3 className={styles.projectTitle}>{project.title}</h3>
         <p className={styles.projectDesc}>{project.desc}</p>
@@ -85,7 +85,7 @@ export default function ProjectCard({ project }) {
           className={styles.projectLinks}
           initial={{ y: 20 }}
           animate={{ y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.a 
             href={project.demo} 
