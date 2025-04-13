@@ -1,6 +1,6 @@
 # React Portfolio
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://your-deployment-link.com)
+[![Live Demo](https://mmolmo.github.io/react_portfolio/)](https://mmolmo.github.io/react_portfolio/)
 
 A modern, animated portfolio website built with React. Showcases projects, skills, and contact features with smooth animations and responsive design.
 
